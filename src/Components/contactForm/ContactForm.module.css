@@ -1,7 +1,4 @@
-.phonebook {
-  margin: 30px;
-}
-.form {
+.ContactForm {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
@@ -9,36 +6,28 @@
   width: 300px;
 }
 
-.label {
+.ContactFormLabel {
   display: flex;
   flex-direction: column;
   display: block;
   margin-bottom: 20px;
   font-weight: 500;
 }
-.input {
+.ContactFormInput {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.input:focus {
+.ContactFormInput:focus {
   outline: cornflowerblue 4px solid;
 }
 
-.button {
+.ContactFormButton {
   display: block;
   border-radius: 4px;
   width: 100px;
   border: 1px solid rgb(187, 184, 184);
   background-color: white;
   font-weight: bold;
-}
-
-.li {
-  font-weight: 500;
-}
-
-.span {
-  margin-left: 5px;
 }
