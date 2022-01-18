@@ -22,6 +22,10 @@
   margin-bottom: 10px;
 }
 
+.input:focus {
+  outline: cornflowerblue 4px solid;
+}
+
 .button {
   display: block;
   border-radius: 4px;
@@ -33,4 +37,8 @@
 
 .li {
   font-weight: bold;
+}
+
+.span {
+  margin-left: 5px;
 }
