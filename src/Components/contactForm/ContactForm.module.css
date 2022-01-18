@@ -31,3 +31,8 @@
   background-color: white;
   font-weight: bold;
 }
+
+.ContactFormButton:hover,
+.ContactFormButton:focus {
+  background-color: cornflowerblue;
+}

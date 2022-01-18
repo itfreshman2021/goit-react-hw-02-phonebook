@@ -26,7 +26,14 @@ class App extends React.Component {
   };
 
   addContact = dataContact => {
-    console.log(dataContact);
+    const DoubleContact = this.state.contacts.find(
+      contact => contact.name.toLocaleLowerCase() === dataContact.name.toLocaleLowerCase(),
+    );
+
+    if (DoubleContact !== undefined) {
+      alert(`${DoubleContact.name} is already in contacts.`);
+      return;
+    }
     const contactNew = {
       id: uuidv4(),
       name: dataContact.name,
