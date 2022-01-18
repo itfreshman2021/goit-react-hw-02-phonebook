@@ -5,7 +5,13 @@ import s from './App.module.css';
 
 class App extends React.Component {
   state = {
-    contacts: [],
+    contacts: [
+      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+    ],
+    filter: '',
     name: '',
     number: '',
   };
@@ -26,7 +32,16 @@ class App extends React.Component {
     this.setState({ name: '', number: '' });
   };
 
+  getVisibleContacts = () => {
+    const normalizedFilter = this.state.filter.toLowerCase();
+    return this.state.contacts.filter(contact =>
+      contact.name.toLocaleLowerCase().includes(normalizedFilter),
+    );
+  };
+
   render() {
+    const visibleContacts = this.getVisibleContacts();
+
     return (
       <>
         <div className={s.phonebook}>
@@ -64,9 +79,22 @@ class App extends React.Component {
             </button>
           </form>
           <h2>Contacts</h2>
+          <label className={s.label}>
+            Find contacts by name
+            <input
+              type="text"
+              name="filter"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+              value={this.state.filter}
+              onChange={this.handleChange}
+              required
+              className={s.input}
+            />
+          </label>
           <ul>
-            {this.state.contacts.map(contact => {
-              const { id, name, number } = contact;
+            {visibleContacts.map(visibleContact => {
+              const { id, name, number } = visibleContact;
               return (
                 <li key={id} className={s.li}>
                   <p>

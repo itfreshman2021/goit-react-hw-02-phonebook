@@ -7,7 +7,6 @@
   border: 2px solid black;
   padding: 10px;
   width: 300px;
-  font-weight: bold;
 }
 
 .label {
@@ -15,6 +14,7 @@
   flex-direction: column;
   display: block;
   margin-bottom: 20px;
+  font-weight: 500;
 }
 .input {
   display: block;
@@ -36,7 +36,7 @@
 }
 
 .li {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .span {
