@@ -42,6 +42,12 @@ class App extends React.Component {
     this.setState(({ contacts }) => ({ contacts: [...contacts, contactNew] }));
   };
 
+  deleteContact = idContact => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== idContact),
+    }));
+  };
+
   getVisibleContacts = () => {
     const normalizedFilter = this.state.filter.toLowerCase();
     return this.state.contacts.filter(contact =>
@@ -60,7 +66,7 @@ class App extends React.Component {
 
           <h2>Contacts</h2>
           <Filter value={this.state.filter} onChange={this.changeFilter} />
-          <ContactList visibleContacts={visibleContacts} />
+          <ContactList visibleContacts={visibleContacts} onDeleteContact={this.deleteContact} />
         </div>
       </>
     );

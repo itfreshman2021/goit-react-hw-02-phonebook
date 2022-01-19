@@ -32,7 +32,7 @@
   font-weight: bold;
 }
 
-.ContactFormButton:hover,
-.ContactFormButton:focus {
+.ContactFormButton:hover {
   background-color: cornflowerblue;
+  cursor: pointer;
 }
