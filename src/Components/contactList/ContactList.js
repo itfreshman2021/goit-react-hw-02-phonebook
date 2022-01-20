@@ -9,9 +9,10 @@ const ContactList = ({ visibleContacts, onDeleteContact }) => (
       return (
         <ContactListItem
           key={id}
+          id={id}
           name={name}
           number={number}
-          onDeleteContact={() => onDeleteContact(id)}
+          onDeleteContact={onDeleteContact}
         />
       );
     })}

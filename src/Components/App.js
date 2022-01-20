@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import s from './App.module.css';
 import ContactForm from './contactForm/ContactForm';
@@ -72,10 +71,5 @@ class App extends React.Component {
     );
   }
 }
-ContactForm.propTypes = { onSubmit: PropTypes.func.isRequired };
-Filter.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-};
 
 export default App;
